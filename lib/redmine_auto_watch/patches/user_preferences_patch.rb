@@ -24,7 +24,7 @@ module RedmineAutoWatch
       end
 
       def auto_watch_issues_created?
-        self[:auto_watch_issues_created]
+        self[:auto_watch_issues_created] == '1'
       end
 
       def auto_watch_issues_edited
@@ -36,7 +36,7 @@ module RedmineAutoWatch
       end
 
       def auto_watch_issues_edited?
-        self[:auto_watch_issues_edited]
+        self[:auto_watch_issues_edited] == '1'
       end
 
       def auto_watch_issues_commented
@@ -48,7 +48,7 @@ module RedmineAutoWatch
       end
 
       def auto_watch_issues_commented?
-        self[:auto_watch_issues_commented]
+        self[:auto_watch_issues_commented] == '1'
       end
 
       def auto_watch_issues_assigned
@@ -60,7 +60,7 @@ module RedmineAutoWatch
       end
 
       def auto_watch_issues_assigned?
-        self[:auto_watch_issues_assigned]
+        self[:auto_watch_issues_assigned] == '1'
       end
 
     end
