@@ -2,8 +2,9 @@
 class AutoWatchHook < Redmine::Hook::Listener
   def controller_issues_edit_before_save(context = {})
     issue = context[:issue]
+    journal = context[:journal]
 
-    # @todo: Differentiate between edited and commented.
+    add_current_user(issue, 'auto_watch_issues_commented?') unless journal.notes.empty?
     add_current_user(issue, 'auto_watch_issues_edited?')
     add_assignee(issue)
     add_assigned_was(issue)
@@ -17,8 +18,9 @@ class AutoWatchHook < Redmine::Hook::Listener
 
   def controller_issues_bulk_edit_before_save(context = {})
     issue = context[:issue]
+    notes = context[:params][:notes]
 
-    # @todo: Differentiate between edited and commented.
+    add_current_user(issue, 'auto_watch_issues_commented?') unless notes.nil? || notes.empty?
     add_current_user(issue, 'auto_watch_issues_edited?')
     add_assignee(issue)
     add_assigned_was(issue)
