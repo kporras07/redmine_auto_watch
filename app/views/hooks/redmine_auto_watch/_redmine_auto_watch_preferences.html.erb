@@ -1,0 +1,6 @@
+<%= labelled_fields_for :pref, @user.pref do |pref_fields| %>
+  <p><%= pref_fields.check_box :auto_watch_issues_created %></p>
+  <p><%= pref_fields.check_box :auto_watch_issues_edited %></p>
+  <p><%= pref_fields.check_box :auto_watch_issues_commented %></p>
+  <p><%= pref_fields.check_box :auto_watch_issues_assigned %></p>
+<% end %>

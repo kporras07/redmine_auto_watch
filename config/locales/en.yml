@@ -1,0 +1,6 @@
+# English strings go here for Rails i18n
+en:
+  field_auto_watch_issues_created: 'Auto watch issues created by me'
+  field_auto_watch_issues_edited: 'Auto watch issues edited by me (any edit)'
+  field_auto_watch_issues_commented: 'Auto watch issues commented by me'
+  field_auto_watch_issues_assigned: 'Auto watch issues I was assigned'
